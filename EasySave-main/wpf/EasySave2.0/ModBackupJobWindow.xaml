@@ -1,0 +1,32 @@
+﻿<Window x:Class="test_projet.ModBackupJobWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:test_projet"
+        mc:Ignorable="d"
+        Title="ModBackupJobWindow" Height="450" Width="800">
+    <Grid>
+        <Grid>
+            <Label Name="NameTag" Content="Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10"/>
+            <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="120,5,0,0" Text="{Binding Nom}" IsEnabled="{Binding test}">
+                
+            </TextBox>
+
+            <Label Name="SourceTag" Content="Source Directory:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,35,0,0"/>
+            <TextBox x:Name="SourceDirectoryTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="120,40,0,0" Text="{Binding source}" IsEnabled="{Binding test}">
+               
+            </TextBox>
+
+            <Label Name="TargetTag" Content="Target Directory:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,70,0,0"/>
+            <TextBox x:Name="TargetDirectoryTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="120,75,0,0" Text="{Binding dest}" IsEnabled="{Binding test}">
+                
+            </TextBox>
+
+            <Label Name="TypeTag" Content="Backup Type:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,105,0,0"/>
+            <ComboBox x:Name="BackupTypeComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="120,110,0,0" SelectedValue="{Binding DefaultBackupType, Mode=TwoWay}" IsEnabled="{Binding test}"/>
+
+            <Button Content="Valider" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="25" Margin="10,140,0,0" Click="ValiderButton_Click"/>
+        </Grid>
+    </Grid>
+</Window>

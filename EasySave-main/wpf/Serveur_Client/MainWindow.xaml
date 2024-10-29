@@ -1,0 +1,43 @@
+﻿<Window x:Class="Serveur_Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Serveur_Client"
+        mc:Ignorable="d"
+        Title="Client" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="401*"/>
+            <ColumnDefinition Width="399*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="SaveDataGrid" Grid.Row="0" AutoGenerateColumns="False" CanUserAddRows="False" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Backup Action" Binding="{Binding BackupAction}" Width="150"/>
+                <DataGridTextColumn Header="Selected Save" Binding="{Binding SelectedSave}" Width="135"/>
+                <DataGridTemplateColumn Header="Progress" Width="518">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ProgressBar Value="{Binding Progress}" Maximum="100"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Actions" Width="300">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="Start" Click="Start_Click"/>
+                                <Button Content="Pause" Click="Pause_Click"/>
+                                <Button Content="Stop" Click="Stop_Click"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
